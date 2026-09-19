@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VoxaAI — Real-Time Speech Translator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <img src="{{ url_for('static', filename='voxa_icon.jpeg') }}" alt="VoxaAI">
+            </div>
+
+            <div class="brand-text">
+                <h1>VoxaAI</h1>
+                <span>Real-Time Speech Translator</span>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>AI Ready</span>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                AI-POWERED SPEECH TRANSLATION
+            </div>
+
+            <h2>
+                Your Voice.<br>
+                <span>Any Language.<br> One clear Meaning.</span>
+            </h2>
+
+            <p>
+                Speak in your language and let VoxaAI
+                detect, transcribe and translate your speech into English.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             TRANSLATOR WORKSPACE
+        ========================== -->
+        <section class="translator-card">
+
+
+            <!-- TOP BAR -->
+            <div class="translator-topbar">
+
+                <div class="language-pill">
+                    <span class="language-icon">🌐</span>
+
+                    <span>Auto Detect</span>
+
+                    <span class="arrow">→</span>
+
+                    <span>English</span>
+                </div>
+
+                <div class="powered-label">
+                    <span>✦</span>
+                    Powered by Gemini
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 RECORD AREA
+            ========================== -->
+            <div class="record-section">
+
+                <div class="record-label">
+                    VOICE INPUT
+                </div>
+
+
+                <button
+                    id="recordButton"
+                    class="record-button"
+                    type="button"
+                    aria-label="Start speaking"
+                >
+
+                    <div class="mic-glow"></div>
+
+                    <!-- MICROPHONE ICON -->
+                    <div class="mic-ring">
+
+                        <svg
+                            class="mic-icon"
+                            viewBox="0 0 64 64"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                        >
+
+                            <!-- Microphone body -->
+                            <rect
+                                x="24"
+                                y="8"
+                                width="16"
+                                height="30"
+                                rx="8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            />
+
+                            <!-- Outer microphone support -->
+                            <path
+                                d="M17 28v4c0 8.3 6.7 15 15 15s15-6.7 15-15v-4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                            <!-- Stand -->
+                            <path
+                                d="M32 47v9"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                            <!-- Base -->
+                            <path
+                                d="M24 56h16"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </button>
+
+
+                <h3 id="recordTitle">
+                    Start Speaking
+                </h3>
+
+                <p id="recordSubtitle">
+                    Click the microphone and speak naturally
+                </p>
+
+
+                <!-- LISTENING STATUS -->
+
+                <div
+                    id="recordingStatus"
+                    class="recording-status hidden"
+                >
+
+                    <span class="pulse"></span>
+
+                    <span>Listening...</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 RESULTS
+            ========================== -->
+            <div class="results">
+
+
+                <!-- DETECTED LANGUAGE -->
+
+                <div class="result-card language-result">
+
+                    <div class="result-header">
+
+                        <div class="result-title">
+
+                            <div class="result-icon">
+                                🌐
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    DETECTED LANGUAGE
+                                </small>
+
+                                <strong id="detectedLanguage">
+                                    Waiting for speech
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="confidence"
+                            class="confidence"
+                        >
+                            --
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     ENGLISH TRANSLATION
+                ========================== -->
+
+                <div class="translation-card">
+
+                    <div class="text-card-header">
+
+                        <div class="card-heading">
+
+                            <span class="card-icon translation-icon">
+                                ✦
+                            </span>
+
+                            <span>
+                                English Translation
+                            </span>
+
+                        </div>
+
+                        <span class="english-label">
+                            ENGLISH
+                        </span>
+
+                    </div>
+
+
+                    <div class="translation-content">
+
+                        <p id="translationText">
+                            Your English translation will appear here...
+                        </p>
+
+                    </div>
+
+
+                    <!-- Translation actions -->
+
+                    <div class="translation-actions">
+
+                        <button
+                            id="copyButton"
+                            class="secondary-button"
+                            type="button"
+                        >
+                            <span>▣</span>
+                            Copy
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 PROCESSING INFORMATION
+            ========================== -->
+
+            <div class="processing-info">
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        ⚡
+                    </span>
+
+                    <div>
+                        <small>
+                            PROCESSING TIME
+                        </small>
+
+                        <strong id="processingTime">
+                            --
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        🎯
+                    </span>
+
+                    <div>
+                        <small>
+                            TARGET LANGUAGE
+                        </small>
+
+                        <strong>
+                            English
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        🧠
+                    </span>
+
+                    <div>
+                        <small>
+                            AI ENGINE
+                        </small>
+
+                        <strong>
+                            Whisper
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="clearButton"
+                    class="clear-button"
+                    type="button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎙️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Speech Recognition
+                    </strong>
+
+                    <p>
+                        Advanced AI-powered speech detection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌍
+                </div>
+
+                <div>
+
+                    <strong>
+                        Multi-Language
+                    </strong>
+
+                    <p>
+                        Automatically detects spoken languages
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Fast Translation
+                    </strong>
+
+                    <p>
+                        Converts speech into English efficiently
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            <span>✦</span>
+            VoxaAI
+        </div>
+
+        <p>
+            AI-powered multilingual speech translation
+        </p>
+
+        <span class="footer-tech">
+            Developed By Srinivas
+        </span>
+
+    </footer>
+    
+    <!-- G² Technologies Logo -->
+    <div class="company-logo">
+        <img
+            src="{{ url_for('static', filename='g2_logo.jpeg') }}"
+            alt="G² Technologies"
+        >
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

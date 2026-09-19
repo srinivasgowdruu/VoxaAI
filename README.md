@@ -153,7 +153,6 @@ Workflows can be structurally validated to identify potential BPMN modeling issu
 
 VoxaAI analyzes BPMN workflows and provides process insights, identified issues, automation opportunities, and recommendations.
 
-![VoxaAI AI Workflow Analysis](screenshots/ai-analysis.png)
 ![VoxaAI AI Workflow Analysis](screenshots/AI-Analysis.png)
 
 ---
@@ -162,7 +161,6 @@ VoxaAI analyzes BPMN workflows and provides process insights, identified issues,
 
 The platform automatically generates structured business-process documentation from BPMN workflows.
 
-![VoxaAI AI Documentation](screenshots/ai-documentation.png)
 ![VoxaAI AI Documentation](screenshots/AI-documentation.png)
 
 ---
@@ -583,23 +581,24 @@ The BPMN model is converted into structured business documentation containing:
 
 ---
 
-# 📌 Feature Summary
-**|Category | Capabilities |**
-|:-----------:|:-------------:|
-| Speech AI | Multilingual speech detection and English translation |
-| Audio | Microphone input and audio-file processing |
-| Visual AI | Natural-language visual interpretation and SVG generation |
-| Drawing | Editable AI-generated visual diagrams |
-| Presentation | PowerPoint export |
-| BPMN | AI-generated BPMN 2.0 workflows |
-| BPMN Editor | Create, edit, connect, delete, undo, redo |
-| Validation | Structural BPMN validation |
-| AI Analysis | Workflow insights and recommendations |
-| Documentation | Automated BPMN documentation |
-| Import | BPMN/XML import |
-| Export | BPMN XML, SVG and PNG |
-| XML | Preview and copy BPMN XML |
-| Reliability | Retry and fallback handling for temporary AI failures |
+## 📌 Feature Summary
+
+| Category | Capabilities |
+|---|---|
+| 🎙️ Speech AI | Multilingual speech detection and English translation |
+| 🎧 Audio | Microphone input and audio-file processing |
+| 🎨 Visual AI | Natural-language visual interpretation and SVG generation |
+| 🖼️ Drawing | Editable AI-generated visual diagrams |
+| 📊 Presentation | PowerPoint export |
+| 🔄 BPMN | AI-generated BPMN 2.0 workflows |
+| 🖥️ BPMN Editor | Create, edit, connect, delete, undo, redo |
+| ✅ Validation | Structural BPMN validation |
+| 🧠 AI Analysis | Workflow insights and recommendations |
+| 📝 Documentation | Automated BPMN documentation |
+| 📥 Import | BPMN/XML import |
+| 📤 Export | BPMN XML, SVG and PNG |
+| 🔍 XML | Preview and copy BPMN XML |
+| 🛡️ Reliability | Retry and fallback handling for temporary AI failures |
 
 ---
 
@@ -607,7 +606,7 @@ The BPMN model is converted into structured business documentation containing:
 VoxaAI aims to bridge the gap between natural-language interaction and structured digital workflows.
 
 Instead of requiring users to manually create translations, diagrams, or business process models, VoxaAI allows them to describe what they need naturally and uses AI to transform those instructions into editable and structured outputs.
-'''text
+
         Natural Language
             ↓
             AI

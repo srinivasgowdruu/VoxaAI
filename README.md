@@ -154,6 +154,7 @@ Workflows can be structurally validated to identify potential BPMN modeling issu
 VoxaAI analyzes BPMN workflows and provides process insights, identified issues, automation opportunities, and recommendations.
 
 ![VoxaAI AI Workflow Analysis](screenshots/ai-analysis.png)
+![VoxaAI AI Workflow Analysis](screenshots/AI-Analysis.png)
 
 ---
 
@@ -162,6 +163,7 @@ VoxaAI analyzes BPMN workflows and provides process insights, identified issues,
 The platform automatically generates structured business-process documentation from BPMN workflows.
 
 ![VoxaAI AI Documentation](screenshots/ai-documentation.png)
+![VoxaAI AI Documentation](screenshots/AI-documentation.png)
 
 ---
 

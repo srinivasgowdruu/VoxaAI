@@ -75,8 +75,8 @@ client = genai.Client(
     api_key=API_KEY
 )
 
-MODEL = "gemini-3.6-flash"
-FALLBACK_MODEL = "gemini-3.5-flash"
+MODEL = "gemini-3.5-flash-lite"
+FALLBACK_MODEL = "gemini-3.6-flash"
 
 print("Gemini connected successfully!")
 
@@ -960,8 +960,8 @@ BPMN XML:
 """
 
         models = [
-            "gemini-3.6-flash",
-            "gemini-3.5-flash"
+            "gemini-3.5-flash-lite",
+            "gemini-3.6-flash"
         ]
 
         response = None
@@ -1093,8 +1093,8 @@ BPMN XML:
 """
 
         models = [
-            "gemini-3.6-flash",
-            "gemini-3.5-flash"
+            "gemini-3.5-flash-lite",
+            "gemini-3.6-flash"
         ]
 
         response = None
